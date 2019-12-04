@@ -1,0 +1,7 @@
+{
+  "name": "nuber-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Jane Lee <Yesdoing13@gmail.com>",
+  "license": "MIT"
+}
