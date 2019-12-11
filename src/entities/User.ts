@@ -8,8 +8,12 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   BeforeInsert,
-  BeforeUpdate
+  BeforeUpdate,
+  OneToMany,
+  ManyToOne
 } from "typeorm";
+import Message from './Message';
+import Chat from './Chat';
 
 const BCRYPT_ROUNDS = 10;
 
@@ -62,6 +66,12 @@ class User extends BaseEntity {
 
   @Column({ type: "double precision", default: 0 })
   lastOrientation: number;
+
+  @OneToMany(type => Message, message => message.creator)
+  messages: Message[];
+
+  @ManyToOne(type => Chat, chat => chat.participants)
+  chat: Chat;
 
   get fullName(): string {
     return `${this.firstName} ${this.lastName}`;
