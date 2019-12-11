@@ -8,7 +8,7 @@ import {
 } from "typeorm";
 
 @Entity()
-class Verification extends BaseEntity {
+class Place extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -34,4 +34,4 @@ class Verification extends BaseEntity {
   updatedAt: string;
 }
 
-export default Verification;
+export default Place;
