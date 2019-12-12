@@ -14,6 +14,8 @@ import {
 } from "typeorm";
 import Message from './Message';
 import Chat from './Chat';
+import Verification from './Verification';
+import Ride from './Ride';
 
 const BCRYPT_ROUNDS = 10;
 
@@ -69,6 +71,15 @@ class User extends BaseEntity {
 
   @OneToMany(type => Message, message => message.creator)
   messages: Message[];
+
+  @OneToMany(type => Verification, verification => verification.user)
+  verifications: Verification[];
+
+  @OneToMany(type => Ride, ride => ride.passenger)
+  rideAsPassenger: Ride[];
+
+  @OneToMany(type => Ride, ride => ride.driver)
+  rideAsDriver: Ride[];
 
   @ManyToOne(type => Chat, chat => chat.participants)
   chat: Chat;
