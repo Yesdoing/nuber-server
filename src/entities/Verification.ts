@@ -1,13 +1,13 @@
+import { verificationTarget } from "src/types/types";
 import {
   BaseEntity,
-  Entity,
+  BeforeInsert,
   Column,
-  PrimaryGeneratedColumn,
   CreateDateColumn,
-  UpdateDateColumn,
-  BeforeInsert
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
 } from "typeorm";
-import { verificationTarget } from "src/types/types";
 
 const PHONE = "PHONE";
 const EMAIL = "EMAIL";
@@ -25,6 +25,9 @@ class Verification extends BaseEntity {
 
   @Column({ type: "text" })
   key: string;
+
+  @Column({ type: "boolean", default: false})
+  verified: boolean;
 
   @CreateDateColumn()
   createdAt: string;
