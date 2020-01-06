@@ -21,8 +21,8 @@
 
 ### Private Resolvers:
 
+- [x] Get my Profile 
 - [ ] Verify Email 
-- [ ] Get my Profile 
 - [ ] Update my Profile 
 - [ ] Toggle Driving Mode 
 - [ ] Report Location / Orientation 
